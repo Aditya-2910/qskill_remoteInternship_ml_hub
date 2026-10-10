@@ -21,7 +21,7 @@ build/
 dist/
 
 # local config
-.env.example
+.env
 
 #docker files
 docker-compose.yml
