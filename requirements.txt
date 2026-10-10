@@ -1,0 +1,4 @@
+# Installs the project in editable mode together with every optional group
+# (MLflow + matplotlib for training, Streamlit for the UI, pytest + ruff for development).
+# The real dependency list lives in pyproject.toml.
+-e .[all]

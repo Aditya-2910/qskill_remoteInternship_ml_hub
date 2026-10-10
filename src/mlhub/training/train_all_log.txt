@@ -1,0 +1,32 @@
+(qskill_env) PS E:\IITH_Mtech_RA\Trying_things\internship\ml-hub> python -m src.mlhub.training.train_all
+Training iris, spam, house into E:\IITH_Mtech_RA\Trying_things\internship\ml-hub\models
+Iris: 150 rows, 4 features (sklearn.datasets.load_iris)
+2026/09/25 23:38:39 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/09/25 23:38:39 INFO mlflow.store.db.utils: Updating database tables
+  CV logistic_regression    accuracy = 0.9583
+  CV knn                    accuracy = 0.9667
+  CV decision_tree          accuracy = 0.9417
+2026/09/25 23:38:41 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Successfully registered model 'mlhub-iris'.
+Created version '1' of model 'mlhub-iris'.
+Iris: best=knn test accuracy=0.933 -> E:\IITH_Mtech_RA\Trying_things\internship\ml-hub\models\iris
+  iris   best=knn                      accuracy=0.933 precision_macro=0.944 recall_macro=0.933 f1_macro=0.933
+HTTP Request: GET https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip "HTTP/1.1 200 OK"
+Spam: 5160 messages after cleaning, 12.4% spam (UCI SMS Spam Collection)
+  CV naive_bayes            f1 = 0.9299
+  CV logistic_regression    f1 = 0.9295
+2026/09/25 23:38:55 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Successfully registered model 'mlhub-spam'.
+Created version '1' of model 'mlhub-spam'.
+Spam: best=naive_bayes test F1=0.939 -> E:\IITH_Mtech_RA\Trying_things\internship\ml-hub\models\spam
+  spam   best=naive_bayes              accuracy=0.985 precision=0.975 recall=0.906 f1=0.939
+Downloading Cal. housing from https://ndownloader.figshare.com/files/5976036 to E:\IITH_Mtech_RA\Trying_things\internship\ml-hub\data\sklearn
+House: 20640 rows, 0 missing cells (sklearn.datasets.fetch_california_housing)
+  CV linear_regression      neg_root_mean_squared_error = -0.7205
+  CV ridge                  neg_root_mean_squared_error = -0.7205
+  CV hist_gradient_boosting neg_root_mean_squared_error = -0.4658
+2026/09/25 23:39:08 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Successfully registered model 'mlhub-house'.
+Created version '1' of model 'mlhub-house'.
+House: best=hist_gradient_boosting test RMSE=0.454 R2=0.843 -> E:\IITH_Mtech_RA\Trying_things\internship\ml-hub\models\house
+  house  best=hist_gradient_boosting   mse=0.206 rmse=0.454 mae=0.302 r2=0.843 baseline_linear_mse=0.556
